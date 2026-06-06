@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Curtain Store</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f4f4;
+}
+
+header{
+background:#6b4f4f;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.hero{
+padding:40px;
+text-align:center;
+background:white;
+}
+
+.upload-box{
+background:white;
+margin:30px auto;
+padding:20px;
+width:80%;
+max-width:500px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+text-align:center;
+}
+
+#preview{
+margin-top:20px;
+max-width:100%;
+display:none;
+border-radius:10px;
+}
+
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:white;
+width:250px;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+text-align:center;
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+button{
+background:#6b4f4f;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+footer{
+background:#333;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Luxury Curtain Store</h1>
+<p>Beautiful Curtains For Your Home</p>
+</header>
+
+<section class="hero">
+<h2>Upload Your Curtain Photo</h2>
+<p>See your curtain designs instantly</p>
+</section>
+
+<div class="upload-box">
+
+<input type="file" id="upload" accept="image/*">
+
+<br><br>
+
+<img id="preview">
+
+</div>
+
+<section class="products">
+
+<div class="card">
+<img src="https://picsum.photos/300/200?1">
+<h3>Modern Curtains</h3>
+<p>₹999</p>
+<button>Buy Now</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?2">
+<h3>Luxury Curtains</h3>
+<p>₹1499</p>
+<button>Buy Now</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/300/200?3">
+<h3>Premium Curtains</h3>
+<p>₹1999</p>
+<button>Buy Now</button>
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Curtain Store
+
+</footer>
+
+<script>
+
+const upload=document.getElementById("upload");
+const preview=document.getElementById("preview");
+
+upload.addEventListener("change",function(){
+
+const file=this.files[0];
+
+if(file){
+
+preview.src=URL.createObjectURL(file);
+
+preview.style.display="block";
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
